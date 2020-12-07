@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4995728976087089605}
   - component: {fileID: 4995728976087089607}
   - component: {fileID: 4995728976087089606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4995728976087089604}
-  m_Text: 4
+  m_Text: 8
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -103,12 +103,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4995728976149649680}
   - component: {fileID: 4995728976149649679}
-  - component: {fileID: 3527701202059504372}
   - component: {fileID: 4421889464954821505}
   - component: {fileID: 6738418413525177494}
-  m_Layer: 0
-  m_Name: Meteor 1 1
-  m_TagString: Untagged
+  - component: {fileID: 1033816552286212814}
+  m_Layer: 8
+  m_Name: Meteor 2 1
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,44 +178,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3527701202059504372
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4995728976149649678}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4428571, y: 1.2}
-    newSize: {x: 1.01, y: 0.84}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.57857144, y: -0.35714287}
-      - {x: 0.7214286, y: -0.057142857}
-      - {x: 0.7214286, y: 0.071428575}
-      - {x: 0.3642857, y: 0.6}
-      - {x: -0.49285716, y: 0.6}
-      - {x: -0.5214286, y: 0.5857143}
-      - {x: -0.7214286, y: 0.071428575}
-      - {x: -0.7214286, y: -0.21428572}
-      - {x: -0.35, y: -0.6}
-      - {x: -0.23571429, y: -0.6}
-      - {x: 0.16428572, y: -0.45714286}
-      - {x: 0.35, y: -0.5285714}
-      - {x: 0.5642857, y: -0.47142857}
 --- !u!50 &4421889464954821505
 Rigidbody2D:
   serializedVersion: 4
@@ -228,14 +190,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.5
-  m_Material: {fileID: 6200000, guid: d7a632d795faebc4a88cf83314dddae6, type: 2}
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &6738418413525177494
 MonoBehaviour:
@@ -249,7 +211,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f06fb71ee9f5bb40ae5ec6b1c56c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 8300000, guid: b257d88c36c872d4c8b08f5b0075e900, type: 3}
   gO: {fileID: 8544114614612567305, guid: 768ec5d678fb54f40b15b5f887be23e9, type: 3}
+  rb: {fileID: 0}
   textMesh: {fileID: 4995728976087089606}
   health: 8
-  jumpForce: 0
+  jumpForce: 12
+--- !u!58 &1033816552286212814
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995728976149649678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.6

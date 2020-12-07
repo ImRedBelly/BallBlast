@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8544114614612567307}
   - component: {fileID: 8544114614612567306}
-  - component: {fileID: 1223953460994254368}
   - component: {fileID: 35707735407911916}
   - component: {fileID: 8534072326276462683}
-  m_Layer: 0
-  m_Name: Meteor 45
-  m_TagString: Untagged
+  - component: {fileID: 3203624652720018873}
+  m_Layer: 8
+  m_Name: Meteor 2 2
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,44 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &1223953460994254368
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8544114614612567305}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.89, y: 0.82}
-    newSize: {x: 0.89, y: 0.82}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.285, y: 0.31}
-      - {x: 0.024999999, y: 0.39}
-      - {x: -0.024999999, y: 0.41}
-      - {x: -0.175, y: 0.41}
-      - {x: -0.445, y: 0.22}
-      - {x: -0.445, y: -0.16}
-      - {x: -0.33499998, y: -0.31}
-      - {x: -0.285, y: -0.37}
-      - {x: 0.015, y: -0.41}
-      - {x: 0.255, y: -0.41}
-      - {x: 0.445, y: -0.07}
-      - {x: 0.445, y: 0.049999997}
-      - {x: 0.315, y: 0.29}
 --- !u!50 &35707735407911916
 Rigidbody2D:
   serializedVersion: 4
@@ -135,11 +97,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: d7a632d795faebc4a88cf83314dddae6, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -156,11 +118,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f06fb71ee9f5bb40ae5ec6b1c56c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gO: {fileID: 0}
-  rb: {fileID: 7796524547372565507, guid: d2d908e67dac13740968331ee04f4748, type: 3}
+  blockDestroy: {fileID: 8300000, guid: b257d88c36c872d4c8b08f5b0075e900, type: 3}
+  gO: {fileID: 7796524547372565507, guid: d2d908e67dac13740968331ee04f4748, type: 3}
+  rb: {fileID: 0}
   textMesh: {fileID: 8544114615710051525}
   health: 4
-  jumpForce: 0
+  jumpForce: 12
+--- !u!58 &3203624652720018873
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8544114614612567305}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.38
 --- !u!1 &8544114615710051523
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +151,7 @@ GameObject:
   - component: {fileID: 8544114615710051524}
   - component: {fileID: 8544114615710051526}
   - component: {fileID: 8544114615710051525}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

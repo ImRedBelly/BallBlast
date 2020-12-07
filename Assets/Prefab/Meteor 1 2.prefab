@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6957537193896010910}
   m_Layer: 8
   m_Name: Meteor 1 2
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f06fb71ee9f5bb40ae5ec6b1c56c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockDestroy: {fileID: 8300000, guid: b257d88c36c872d4c8b08f5b0075e900, type: 3}
   gO: {fileID: 6851957252991317523, guid: 70743a72ea7de5a4184e086dac975d34, type: 3}
   rb: {fileID: 6851957252991317523, guid: 70743a72ea7de5a4184e086dac975d34, type: 3}
   textMesh: {fileID: 4070540270797326784}
@@ -138,7 +139,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.445
+  m_Radius: 0.38
 --- !u!1 &4070540270797326790
 GameObject:
   m_ObjectHideFlags: 0

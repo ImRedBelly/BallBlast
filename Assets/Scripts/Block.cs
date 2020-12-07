@@ -2,6 +2,9 @@
 
 public class Block : MonoBehaviour
 {
+    GameManager gameManager;
+    AudioManager audioManager;
+    public AudioClip blockDestroy;
     public GameObject gO;
     public Rigidbody2D rb;
     public TextMesh textMesh;
@@ -11,6 +14,9 @@ public class Block : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.right * 2;
     }
@@ -44,6 +50,10 @@ public class Block : MonoBehaviour
         {
             Damage(1);
         }
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            gameManager.AddHealth(-1);
+        }
     }
 
     void Damage(int damage)
@@ -55,8 +65,12 @@ public class Block : MonoBehaviour
         else
         {
             Dead();
-            Instantiate(gO, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
-            Instantiate(gO, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            if (gO)
+            {
+                audioManager.PlaySound(blockDestroy);
+                Instantiate(gO, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
+                Instantiate(gO, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            }
         }
         UpdateText();
 
@@ -64,6 +78,7 @@ public class Block : MonoBehaviour
     void Dead()
     {
         Destroy(gameObject);
+        gameManager.AddScore(1);
     }
 
     void UpdateText()
