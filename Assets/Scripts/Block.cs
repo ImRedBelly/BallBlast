@@ -2,88 +2,62 @@
 
 public class Block : MonoBehaviour
 {
-    GameManager gameManager;
-    AudioManager audioManager;
-    public AudioClip blockDestroy;
-    public GameObject gO;
+    public GameObject spawnObject;
     public Rigidbody2D rb;
     public TextMesh textMesh;
 
-    public int health;
+    public float health;
     public float jumpForce;
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        audioManager = FindObjectOfType<AudioManager>();
-
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.right * 2;
+        rb.velocity = Vector2.right;
     }
-    void Update()
-    {
-        UpdateText();
-    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Down")
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            return;
         }
+
 
         if (collision.gameObject.tag == "Wall")
         {
             if (transform.position.x > 0)
-            {
                 rb.AddForce(Vector2.left * 150f);
-            }
-            else 
-            {
+
+            else
                 rb.AddForce(Vector2.right * 150f);
-            }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    
+
+    public void AddForce()
     {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Damage(1);
-        }
-        if (collision.gameObject.CompareTag("Ship"))
-        {
-            gameManager.AddHealth(-1);
-        }
+
     }
 
-    void Damage(int damage)
+    public void GetDamage(float damagePoint)
     {
         if (health > 1)
         {
-            health -= damage;
+            health -= damagePoint;
+            textMesh.text = health.ToString();
         }
         else
         {
-            Dead();
-            if (gO)
+            if (spawnObject)
             {
-                audioManager.PlaySound(blockDestroy);
-                Instantiate(gO, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
-                Instantiate(gO, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+                Instantiate(spawnObject, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
+                Instantiate(spawnObject, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
             }
+
+            Destroy(gameObject, 0.1f);
         }
-        UpdateText();
-
     }
-    void Dead()
-    {
-        Destroy(gameObject);
-        gameManager.AddScore(1);
-    }
-
-    void UpdateText()
-    {
-        textMesh.text = health.ToString();
-    }
-
 }

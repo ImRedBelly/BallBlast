@@ -2,25 +2,22 @@
 
 public class Bullet : MonoBehaviour
 {
-    float speed = 10f;
-    Rigidbody2D rb;
+    [SerializeField] float speed = 10f;
+    [SerializeField] float damagePoint = 1f;
+
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
+        Destroy(gameObject, 3);
     }
-    private void Update()
-    {
 
-        Vector2 force = new Vector2(0, 1);
-        rb.velocity = force.normalized * speed;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Block"))
         {
+            collision.GetComponent<Block>().GetDamage(damagePoint);
             Destroy(gameObject);
         }
-        
     }
 }

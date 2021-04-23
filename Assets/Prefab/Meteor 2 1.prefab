@@ -47,6 +47,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -71,6 +72,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!102 &4995728976087089606
 TextMesh:
   serializedVersion: 3
@@ -143,6 +145,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -166,7 +169,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: d0a703c697404ed49979a1477e801ee8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -211,8 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f06fb71ee9f5bb40ae5ec6b1c56c7b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockDestroy: {fileID: 8300000, guid: b257d88c36c872d4c8b08f5b0075e900, type: 3}
-  gO: {fileID: 8544114614612567305, guid: 768ec5d678fb54f40b15b5f887be23e9, type: 3}
+  spawnObject: {fileID: 8544114614612567305, guid: 768ec5d678fb54f40b15b5f887be23e9,
+    type: 3}
   rb: {fileID: 0}
   textMesh: {fileID: 4995728976087089606}
   health: 8

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2910897282338341436}
   - component: {fileID: 3418772475865972570}
   m_Layer: 10
-  m_Name: starGold
+  m_Name: StarGold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9d47b90bdd05d8946a2d42a2a2af7a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,4 +134,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d926e93e1cfa42745a3a57a91204f42e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: 59833ef6721e60642bd456c891b753f4, type: 3}
